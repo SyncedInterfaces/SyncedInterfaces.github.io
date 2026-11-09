@@ -122,15 +122,18 @@ a {
 }
 
 .feature-list {
-    border-top: 1px solid #2e2e2e;
+    column-count: 2;
+    column-gap: 48px;
 }
 
 .feature-block {
-    border-bottom: 1px solid #2e2e2e;
+    break-inside: avoid;
+    border-left: 2px solid {{ACCENT}};
+    margin-bottom: 10px;
 }
 
 .feature-block summary {
-    padding: 16px 4px;
+    padding: 12px 14px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -153,14 +156,14 @@ a {
 }
 
 .feature-block h4 {
-    margin: 4px 0 8px 16px;
+    margin: 4px 0 8px 30px;
     font-size: 12px;
     font-weight: 500;
     color: #9a9a9a;
 }
 
 .feature-block ul {
-    margin: 0 0 16px 16px;
+    margin: 0 0 14px 30px;
     list-style: none;
 }
 
@@ -276,6 +279,10 @@ a {
 
     .section-head {
         margin: 56px 0 24px;
+    }
+
+    .feature-list {
+        column-count: 1;
     }
 
     .changelog-row {
