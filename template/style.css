@@ -1,10 +1,10 @@
 :root {
-    --bg: #121317;
-    --surface: #1a1c21;
-    --surface-2: #21242b;
-    --border: #2b2e36;
-    --text: #e8eaed;
-    --dim: #9aa0a6;
+    --bg: #161616;
+    --surface: #1c1c1c;
+    --surface-2: #242424;
+    --border: #3a3a3a;
+    --text: #f0f0f0;
+    --dim: #8c8c8c;
     --accent: {{ACCENT}};
 }
 
@@ -17,8 +17,8 @@
 body {
     background: var(--bg);
     color: var(--text);
-    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
+    font-family: "Century Gothic", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
 }
 
 a {
@@ -34,94 +34,85 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 0 32px;
-    height: 56px;
-    background: rgba(18, 19, 23, 0.92);
+    height: 52px;
+    background: var(--surface-2);
     border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(8px);
 }
 
 .brand {
     font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.3px;
-}
-
-.brand .dot {
-    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
 }
 
 .nav {
     display: flex;
-    gap: 24px;
-    font-size: 14px;
+    gap: 22px;
+    font-size: 13px;
     color: var(--dim);
 }
 
-.nav a:hover,
-.nav a.active {
+.nav a:hover {
     color: var(--text);
 }
 
 .nav a.active {
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 2px;
+    color: var(--text);
 }
 
 main {
-    max-width: 960px;
+    max-width: 920px;
     margin: 0 auto;
-    padding: 48px 24px 96px;
+    padding: 40px 24px 80px;
 }
 
 .hero {
-    padding: 48px 0 64px;
+    padding: 32px 0 48px;
+    border-bottom: 1px solid var(--border);
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 34px;
     font-weight: 700;
-    letter-spacing: -0.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .hero .tagline {
-    margin-top: 12px;
-    font-size: 18px;
+    margin-top: 10px;
+    font-size: 15px;
     color: var(--dim);
 }
 
 .hero .version {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 4px 12px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
+    margin-top: 18px;
     font-size: 13px;
     color: var(--dim);
     font-variant-numeric: tabular-nums;
 }
 
 .hero .version strong {
-    color: var(--accent);
+    color: var(--text);
     font-weight: 600;
 }
 
 .actions {
-    margin-top: 32px;
+    margin-top: 24px;
     display: flex;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .button {
     display: inline-block;
-    padding: 10px 22px;
-    border-radius: 5px;
-    font-size: 14px;
+    padding: 8px 18px;
+    font-size: 13px;
     font-weight: 600;
+    letter-spacing: 0.4px;
     border: 1px solid var(--border);
     background: var(--surface-2);
     color: var(--text);
-    transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .button:hover {
@@ -131,59 +122,55 @@ main {
 .button.primary {
     background: var(--accent);
     border-color: var(--accent);
-    color: #fff;
+    color: #161616;
 }
 
 .button.primary:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.08);
 }
 
 h2.section {
-    font-size: 22px;
+    font-size: 13px;
     font-weight: 700;
-    margin: 48px 0 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--dim);
+    margin: 40px 0 16px;
 }
 
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
 }
 
 .feature-card {
     background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
     padding: 18px 20px;
 }
 
 .feature-card h3 {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.feature-card h3::before {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin-right: 8px;
-    background: var(--accent);
-    border-radius: 1px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text);
+    padding-left: 10px;
+    border-left: 2px solid var(--accent);
+    margin-bottom: 12px;
 }
 
 .feature-group {
-    margin-top: 12px;
+    margin-top: 14px;
 }
 
 .feature-group .group-title {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.8px;
     color: var(--dim);
     margin-bottom: 4px;
 }
@@ -195,11 +182,11 @@ h2.section {
 .feature-card li {
     font-size: 13px;
     color: var(--dim);
-    padding: 3px 0;
+    padding: 2px 0;
 }
 
 .feature-card li::before {
-    content: "-";
+    content: "\00B7";
     margin-right: 8px;
     color: var(--border);
 }
@@ -207,25 +194,27 @@ h2.section {
 .changelog-entry {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 22px 26px;
-    margin-bottom: 20px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
 }
 
 .changelog-entry .date {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
 }
 
 .changelog-entry .latest-tag {
     display: inline-block;
     margin-left: 10px;
-    padding: 2px 8px;
-    font-size: 11px;
-    font-weight: 600;
+    padding: 1px 7px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
     color: var(--accent);
     border: 1px solid var(--accent);
-    border-radius: 3px;
     vertical-align: middle;
 }
 
@@ -234,39 +223,34 @@ h2.section {
 }
 
 .change-group .group-title {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.8px;
+    color: var(--dim);
     margin-bottom: 4px;
 }
-
-.group-added .group-title { color: #4caf7d; }
-.group-changed .group-title { color: #e0a944; }
-.group-removed .group-title { color: #b9556b; }
-.group-fixed .group-title { color: #5b9dd9; }
 
 .change-group ul {
     list-style: none;
 }
 
 .change-group li {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--dim);
-    padding: 3px 0;
+    padding: 2px 0;
 }
 
 .change-group li::before {
-    content: "-";
+    content: "\00B7";
     margin-right: 8px;
     color: var(--border);
 }
 
 .site-footer {
     border-top: 1px solid var(--border);
-    padding: 24px 32px;
-    text-align: center;
-    font-size: 13px;
+    padding: 20px 32px;
+    font-size: 12px;
     color: var(--dim);
 }
 
@@ -277,7 +261,7 @@ h2.section {
 
 @media (max-width: 640px) {
     .hero h1 {
-        font-size: 30px;
+        font-size: 26px;
     }
 
     main {
