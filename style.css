@@ -38,18 +38,23 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
+    gap: 16px;
+    min-height: 64px;
+    padding: 12px 0;
     background: var(--bg);
 }
 
 .brand {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 8px;
     font-weight: 600;
     font-size: 15px;
     letter-spacing: -0.2px;
 }
 
 .version-badge {
-    margin-left: 6px;
     padding: 2px 8px;
     font-size: 10px;
     font-weight: 500;
@@ -57,12 +62,12 @@ a {
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 3px;
-    vertical-align: 1px;
 }
 
 .nav {
     display: flex;
-    gap: 28px;
+    flex-wrap: wrap;
+    gap: 12px 28px;
     font-size: 13px;
     font-weight: 500;
     text-transform: uppercase;
@@ -74,14 +79,14 @@ a {
 }
 
 .hero {
-    padding: 88px 0 72px;
+    padding: clamp(48px, 11vw, 88px) 0 clamp(40px, 9vw, 72px);
 }
 
 .hero h1 {
-    font-size: 44px;
+    font-size: clamp(30px, 8vw, 44px);
     font-weight: 600;
     letter-spacing: -1.5px;
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 .hero .tagline {
@@ -110,6 +115,7 @@ a {
     border: 1px solid var(--border);
     background: var(--panel);
     color: var(--text);
+    min-height: 44px;
 }
 
 .button:hover {
@@ -149,13 +155,12 @@ h2.section-head {
     font-weight: 600;
     letter-spacing: -0.2px;
     color: var(--text);
-    margin: 88px 0 32px;
+    margin: clamp(56px, 10vw, 88px) 0 clamp(24px, 5vw, 32px);
 }
 
 .feature-cols {
-    column-count: 3;
+    columns: 22rem;
     column-gap: 48px;
-    column-rule: 1px solid var(--border);
 }
 
 .feature-block {
@@ -279,12 +284,7 @@ h2.section-head {
 
 @media (max-width: 900px) {
     .feature-cols {
-        column-count: 2;
         column-gap: 36px;
-    }
-
-    .hero h1 {
-        font-size: 38px;
     }
 }
 
@@ -294,7 +294,7 @@ h2.section-head {
     }
 
     .site-header {
-        height: 56px;
+        min-height: 56px;
     }
 
     .brand {
@@ -307,17 +307,8 @@ h2.section-head {
     }
 
     .nav {
-        gap: 16px;
+        gap: 10px 16px;
         font-size: 12px;
-    }
-
-    .hero {
-        padding: 48px 0 36px;
-    }
-
-    .hero h1 {
-        font-size: clamp(28px, 9vw, 34px);
-        letter-spacing: -1px;
     }
 
     .hero .tagline {
@@ -345,13 +336,7 @@ h2.section-head {
     }
 
     h2.section-head {
-        margin: 56px 0 24px;
         font-size: 14px;
-    }
-
-    .feature-cols {
-        column-count: 1;
-        column-rule: none;
     }
 
     .feature-block {
