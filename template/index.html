@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{NAME}}</title>
+<meta name="description" content="{{TAGLINE}}">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+    <a class="brand" href="index.html">{{NAME}}<span class="dot">.</span></a>
+    <nav class="nav">
+        <a href="features.html">Features</a>
+        <a href="changelog.html">Changelog</a>
+        {{GITHUB_LINK}}
+    </nav>
+</header>
+<main>
+    <section class="hero">
+        <h1>{{NAME}}</h1>
+        <p class="tagline">{{TAGLINE}}</p>
+        <p class="version">Current version <strong>v{{VERSION}}</strong></p>
+        <div class="actions">
+            {{SCRIPT_BUTTON}}
+            <a class="button" href="features.html">Feature list</a>
+            <a class="button" href="changelog.html">Changelog</a>
+        </div>
+    </section>
+    <h2 class="section">What it does</h2>
+    <div class="feature-grid">
+{{HOME_CARDS}}
+    </div>
+</main>
+<footer class="site-footer">{{NAME}} v{{VERSION}}</footer>
+</body>
+</html>

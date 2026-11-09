@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog - Synced Interfaces</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+    <a class="brand" href="index.html">Synced Interfaces<span class="dot">.</span></a>
+    <nav class="nav">
+        <a href="features.html">Features</a>
+        <a href="changelog.html" class="active">Changelog</a>
+        
+    </nav>
+</header>
+<main>
+    <h2 class="section">Changelog</h2>
+    <article class="changelog-entry">
+        <p class="date">November 8th<span class="latest-tag">Latest</span></p>
+        <div class="change-group group-added">
+            <p class="group-title">Added</p>
+            <ul>
+                <li>Prison Life: vest pickup, meal eat, drop collector, empty mag, charge outline, height clamp, taser skip, car shot pass, fence touch, held gun offset, and firearm tweaks.</li>
+                <li>Reflections toggle next to depth of field, global illumination, and motion blur.</li>
+                <li>Chat text size forcer so games cannot send oversized rich text.</li>
+            </ul>
+        </div>
+        <div class="change-group group-changed">
+            <p class="group-title">Changed</p>
+            <ul>
+                <li>Session info and performance sit in a thin bar at the top center, with a short animation when a value changes.</li>
+                <li>Shader presets use softer light, matching fog, and night clouds.</li>
+                <li>Who's speaking rows are taller, and a second speaker no longer clips into the custom chat interface.</li>
+                <li>Target info only shows the selected player.</li>
+            </ul>
+        </div>
+        <div class="change-group group-fixed">
+            <p class="group-title">Fixed</p>
+            <ul>
+                <li>Target player dropdown no longer starts with a name selected.</li>
+                <li>Selecting a target no longer turns the local character around.</li>
+                <li>Selected player names clipping in the target panel.</li>
+                <li>Performance ping reading the wrong network stat.</li>
+            </ul>
+        </div>
+    </article>
+    <article class="changelog-entry">
+        <p class="date">November 7th, continued</p>
+        <div class="change-group group-added">
+            <p class="group-title">Added</p>
+            <ul>
+                <li>Punch to Escape lobby: commissary, class spin, bags, settings, solo start, and leave squad.</li>
+                <li>Punch to Escape prison: auto punch, auto collect, auto sell when the bag is full, belts, machines, revive, and escape.</li>
+                <li>Cell search moves you into the cell with 3 seconds left, then places back when it ends.</li>
+            </ul>
+        </div>
+        <div class="change-group group-changed">
+            <p class="group-title">Changed</p>
+            <ul>
+                <li>Auto collect sends one full claim of nearby rubble about every tenth of a second.</li>
+                <li>Experiences controls use separate group boxes instead of one long list.</li>
+            </ul>
+        </div>
+        <div class="change-group group-fixed">
+            <p class="group-title">Fixed</p>
+            <ul>
+                <li>Interface config now saves menu settings, including the watermark dropdown and more.</li>
+            </ul>
+        </div>
+    </article>
+    <article class="changelog-entry">
+        <p class="date">November 7th</p>
+        <div class="change-group group-added">
+            <p class="group-title">Added</p>
+            <ul>
+                <li>Discord tab to copy or post changelogs and the feature list.</li>
+                <li>Command bar (`;`) with autocomplete and history.</li>
+                <li>Phone now can be pinned to an inventory hotbar slot.</li>
+                <li>Session info, performance, and who's speaking show above the custom chat interface.</li>
+                <li>Lucide icons, tab names on hover, and name/version at the top of the menu.</li>
+                <li>Custom background images in Interface settings.</li>
+                <li>Some settings stay hidden until their toggle is on.</li>
+            </ul>
+        </div>
+        <div class="change-group group-changed">
+            <p class="group-title">Changed</p>
+            <ul>
+                <li>Full UI rewrite with a new layout and cleaner look.</li>
+                <li>Settings moved into Interface, and configs moved to the Config tab.</li>
+                <li>Menu can be dragged from the top bar and the sidebar is cleaner.</li>
+                <li>Notifications are limited to 6.</li>
+            </ul>
+        </div>
+        <div class="change-group group-removed">
+            <p class="group-title">Removed</p>
+            <ul>
+                <li>Fling features.</li>
+                <li>Localhost website.</li>
+                <li>Custom cursor, reset mouse, and tooltips.</li>
+                <li>Array list rainbow, UI blur, UI scale, and reset layout.</li>
+                <li>Ctrl+T theme panel and theme creator.</li>
+            </ul>
+        </div>
+        <div class="change-group group-fixed">
+            <p class="group-title">Fixed</p>
+            <ul>
+                <li>Menu or camera getting stuck after closing with shift lock off.</li>
+                <li>Background image not coming back after reloading.</li>
+                <li>Rows hiding wrong or overlapping in some places.</li>
+                <li>A hotkey opening the phone and menu at the same time.</li>
+                <li>Phone seek slider and webhook input clipping.</li>
+                <li>Discord tab startup crash.</li>
+            </ul>
+        </div>
+    </article>
+    <article class="changelog-entry">
+        <p class="date">November 4th</p>
+        <div class="change-group group-added">
+            <p class="group-title">Added</p>
+            <ul>
+                <li>Localhost website. Commands are selected and run from the site instead of the in-game command bar.</li>
+                <li>Startup page with the main account headshot and a connection checklist.</li>
+                <li>Feature List tab. The list can be edited and saved, then posted to Discord as an embed.</li>
+                <li>Home page command field, category shortcuts, and the latest changelog entry.</li>
+                <li>Session page with recent relay checks, latency, and the last check time.</li>
+                <li>Command notifications on the site, plus a notice when the relay goes up or down.</li>
+                <li>Discord icon in the site header.</li>
+                <li>Changelog dates can be filtered. Posting a date updates that date's Discord message.</li>
+            </ul>
+        </div>
+        <div class="change-group group-changed">
+            <p class="group-title">Changed</p>
+            <ul>
+                <li>Replaced the in-game command bar and command list with the localhost website.</li>
+                <li>Home page rebuilt around running commands and the latest changelog.</li>
+                <li>Body color command renamed from -torsocolor to -bodycolor.</li>
+                <li>Form shapes now run through -form.</li>
+                <li>Site typeface set to Math Sans Bold.</li>
+                <li>Site icon replaced with a heavier S mark.</li>
+                <li>Syntax check updated to Luau 0.745.</li>
+            </ul>
+        </div>
+        <div class="change-group group-removed">
+            <p class="group-title">Removed</p>
+            <ul>
+                <li>In-game command bar.</li>
+                <li>In-game command list.</li>
+                <li>Copy and Save on the command site.</li>
+                <li>Settings button and the startup note.</li>
+            </ul>
+        </div>
+        <div class="change-group group-fixed">
+            <p class="group-title">Fixed</p>
+            <ul>
+                <li>Relay now drops alts that stop responding, so a disconnected alt is no longer shown as connected.</li>
+                <li>Relay acknowledgements, combined main and alt stop, and persistent retries no longer confirm an older command run.</li>
+                <li>Pressing / no longer opens Controls from other pages.</li>
+            </ul>
+        </div>
+    </article>
+    <article class="changelog-entry">
+        <p class="date">November 3rd</p>
+        <div class="change-group group-added">
+            <p class="group-title">Added</p>
+            <ul>
+                <li>Ctrl+T opens an appearance panel with the theme list, preview, and search.</li>
+                <li>Themes include Dark, Light, Midnight, Abyss, Porcelain, Windows 7, Catppuccin Mocha, OLED Black, Nord, Rose Pine, Gruvbox, Tokyo Night, Dracula, Everforest, Solarized Dark, Ayu Mirage, and Classic Windows.</li>
+                <li>Accent hue, color presets, Lock accent, and Theme creator moved into the panel.</li>
+                <li>-botwars / -unbotwars. Preview coming soon after a few bug fixes.</li>
+            </ul>
+        </div>
+        <div class="change-group group-changed">
+            <p class="group-title">Changed</p>
+            <ul>
+                <li>Hovering a theme updates the preview. Open and close have a short fade.</li>
+                <li>Dark themes with a white text accent use an outline button instead of a filled white one.</li>
+                <li>Attach cleanup resets the local character the same way as other actions.</li>
+            </ul>
+        </div>
+        <div class="change-group group-removed">
+            <p class="group-title">Removed</p>
+            <ul>
+                <li>Halloween, Christmas, Winter, and Auto Seasonal theme changer.</li>
+                <li>Browse themes button and the Interface Theme dropdown.</li>
+                <li>Music Visualiser, including the Spotify visualiser helper.</li>
+                <li>SoundCloud, including the phone app, music source, and audio helper.</li>
+            </ul>
+        </div>
+        <div class="change-group group-fixed">
+            <p class="group-title">Fixed</p>
+            <ul>
+                <li>Ctrl+T not closing the panel, including while search was focused.</li>
+                <li>Panel opening with the menu closed, or staying open after the menu closed.</li>
+                <li>Clicking the preview closing the panel.</li>
+                <li>Using this theme was hard to read on light themes.</li>
+                <li>Theme list covering the panel's rounded corners.</li>
+                <li>Search focusing itself when the panel opened.</li>
+                <li>Accent dots and the Lock accent / Theme creator buttons missing their background.</li>
+                <li>Alt commands such as -bp failing after Bot Wars was added, because stopping actions called Bot Wars before that action was loaded.</li>
+                <li>Bundled action loader missing Bot Wars, so the module never registered on a normal load.</li>
+                <li>One bad action module stopping the rest of the action list from loading.</li>
+            </ul>
+        </div>
+    </article>
+    <article class="changelog-entry">
+        <p class="date">November 2nd</p>
+        <div class="change-group group-added">
+            <p class="group-title">Added</p>
+            <ul>
+                <li>Replaced the tablet with a phone, including lock screen, home screen, and apps.</li>
+                <li>Lock screen and home screen wallpapers, selectable from a file or link in Settings.</li>
+                <li>Settings for wallpaper, PIN, battery, music, and about phone.</li>
+                <li>Notifications show on the phone.</li>
+                <li>Bottom navigation bar with back, home, and open apps. Swiping up closes the current app.</li>
+                <li>Calculator app built into the phone.</li>
+                <li>Waypoint compass showing direction and distance to the selected place.</li>
+            </ul>
+        </div>
+        <div class="change-group group-changed">
+            <p class="group-title">Changed</p>
+            <ul>
+                <li>Phone is smaller on screen.</li>
+                <li>Lock screen text is larger.</li>
+                <li>Charger changed to a thin USB-C cable with a short plug and white wall brick.</li>
+                <li>Category windows line up with the sidebar and pack from left to right.</li>
+                <li>Sub-tabs stay on one line with full names visible.</li>
+                <li>Enabled toggles no longer have a tinted row background.</li>
+            </ul>
+        </div>
+        <div class="change-group group-removed">
+            <p class="group-title">Removed</p>
+            <ul>
+                <li>Keystrokes.</li>
+                <li>Suspected exploiter checks, which were causing major performance drops.</li>
+            </ul>
+        </div>
+    </article>
+    <article class="changelog-entry">
+        <p class="date">November 1st</p>
+        <div class="change-group group-added">
+            <p class="group-title">Added</p>
+            <ul>
+                <li>Stronger scatter edge and void checks to keep alts on the map.</li>
+                <li>-stack / -unstack to stack alts on a target's head.</li>
+                <li>-facesit / -unfacesit to sit alts on a player's face.</li>
+                <li>-form crab and -form bike.</li>
+                <li>Rebuilt centipede so the body and legs look like one connected form.</li>
+                <li>Taller -form mech.</li>
+            </ul>
+        </div>
+        <div class="change-group group-fixed">
+            <p class="group-title">Fixed</p>
+            <ul>
+                <li>-unbp / -unheadsit failing or glitching after alts had been sitting idle.</li>
+                <li>Attach cleanup not working properly when airwalk was involved.</li>
+                <li>Missed -un commands after a quiet stretch.</li>
+                <li>Scatter launching alts, sticking them on airwalk plates, or freezing them.</li>
+                <li>Airwalk reactivating after scatter or leaving floating plates behind.</li>
+                <li>Crab, bike, and centipede facing the wrong way or falling apart while walking.</li>
+                <li>Crab's back legs starting behind the shell.</li>
+                <li>Bike wheels sitting below the ground.</li>
+                <li>Mech feet not reaching the ground.</li>
+                <li>-line and -sync placing two alts in the same spot.</li>
+                <li>-stop missing alts after a command had been running for a while.</li>
+            </ul>
+        </div>
+    </article>
+    <article class="changelog-entry">
+        <p class="date">October 31st</p>
+        <div class="change-group group-added">
+            <p class="group-title">Added</p>
+            <ul>
+                <li>Drawing pad in Alt Control. The drawing appears in-game when forming alts, and still has a few bugs.</li>
+                <li>Rebuilt tablet home screen with an app grid, now playing panel, and playback controls.</li>
+                <li>Shared control center for Wi-Fi and battery.</li>
+                <li>Slower battery drain and charging. The tablet powers off at 0% until plugged in.</li>
+                <li>PIN entry works with both the number row and the numpad.</li>
+            </ul>
+        </div>
+        <div class="change-group group-fixed">
+            <p class="group-title">Fixed</p>
+            <ul>
+                <li>Alt Control reliability when alts join, leave, or respawn mid-action.</li>
+                <li>Group actions staying in sync with late alts and persistent command retries.</li>
+                <li>Emergency stop and attach cleanup standing alts up after seated or attached actions.</li>
+                <li>Relay delivery and missed-alt retries using the correct action timing.</li>
+                <li>Notifications, anti-sit restore, and shutdown edge cases leaving actions running.</li>
+                <li>Tablet startup screen and PIN page cleanup.</li>
+            </ul>
+        </div>
+    </article>
+    <article class="changelog-entry">
+        <p class="date">October 30th</p>
+        <div class="change-group group-added">
+            <p class="group-title">Added</p>
+            <ul>
+                <li>New features and UI improvements.</li>
+            </ul>
+        </div>
+        <div class="change-group group-fixed">
+            <p class="group-title">Fixed</p>
+            <ul>
+                <li>Various bugs, performance issues, and reliability problems.</li>
+                <li>General polish across existing features.</li>
+            </ul>
+        </div>
+    </article>
+</main>
+<footer class="site-footer">Synced Interfaces v1.1057</footer>
+</body>
+</html>

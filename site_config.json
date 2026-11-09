@@ -1,0 +1,10 @@
+{
+    "name": "Synced Interfaces",
+    "tagline": "A Roblox utility script with full alt control.",
+    "repoUrl": "",
+    "scriptUrl": "",
+    "accent": "#e2564b",
+    "webhooks": {
+        "changelog": ""
+    }
+}
