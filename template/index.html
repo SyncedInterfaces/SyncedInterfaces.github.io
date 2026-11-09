@@ -10,15 +10,17 @@
 <link rel="stylesheet" href="style.css?v={{VERSION}}">
 </head>
 <body>
-<div class="page">
 <header class="site-header">
-    <a class="brand" href="index.html">{{NAME}} <span class="version-badge">v{{VERSION}}</span></a>
-    <nav class="nav">
-        <a href="#features">Features</a>
-        <a href="#changelog">Changelog</a>
-        {{GITHUB_LINK}}
-    </nav>
+    <div class="bar page">
+        <a class="brand" href="index.html">{{NAME}} <span class="version-badge">v{{VERSION}}</span></a>
+        <nav class="nav">
+            <a href="#features">Features</a>
+            <a href="#changelog">Changelog</a>
+            {{GITHUB_LINK}}
+        </nav>
+    </div>
 </header>
+<div class="page">
 <main>
     <section class="hero">
         <h1>{{NAME}}</h1>
