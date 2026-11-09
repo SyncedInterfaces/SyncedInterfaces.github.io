@@ -1,9 +1,9 @@
 :root {
-    --bg: #0b090b;
-    --panel: #141114;
-    --border: #262226;
-    --text: #ffffff;
-    --dim: #98939a;
+    --bg: #161616;
+    --panel: #1f1f1f;
+    --border: #2e2e2e;
+    --text: #f2f2f2;
+    --dim: #9a9a9a;
     --accent: #c38185;
 }
 
@@ -32,16 +32,32 @@ a {
 }
 
 .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 64px;
+    background: var(--bg);
 }
 
 .brand {
     font-weight: 600;
     font-size: 15px;
     letter-spacing: -0.2px;
+}
+
+.version-badge {
+    margin-left: 6px;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--dim);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    vertical-align: 1px;
 }
 
 .nav {
@@ -103,7 +119,11 @@ a {
 .button.primary {
     background: var(--accent);
     border-color: var(--accent);
-    color: #141014;
+    color: #171417;
+}
+
+.button.ghost:hover {
+    color: var(--text);
 }
 
 .button.primary:hover {
@@ -121,49 +141,42 @@ a {
 }
 
 .version-line {
-    margin-top: 18px;
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--dim);
+    display: none;
 }
 
 h2.section-head {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--dim);
-    margin: 72px 0 28px;
+    letter-spacing: -0.2px;
+    color: var(--text);
+    margin: 88px 0 32px;
 }
 
 .feature-cols {
     column-count: 3;
-    column-gap: 44px;
+    column-gap: 48px;
     column-rule: 1px solid var(--border);
 }
 
 .feature-block {
     break-inside: avoid;
-    margin: 0 0 36px;
-    padding-left: 16px;
+    margin: 0 0 44px;
+    padding-left: 18px;
     border-left: 2px solid var(--accent);
 }
 
 .feature-block h3 {
     font-size: 14px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    margin-bottom: 10px;
+    letter-spacing: 0.2px;
+    margin-bottom: 12px;
 }
 
 .feature-block h4 {
     font-size: 12px;
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
     color: var(--dim);
-    margin: 14px 0 4px;
+    margin: 16px 0 6px;
 }
 
 .feature-block ul {
@@ -174,20 +187,20 @@ h2.section-head {
     font-size: 13px;
     font-weight: 300;
     color: var(--dim);
-    padding: 2px 0;
+    padding: 3px 0;
 }
 
 .feature-block li::before {
     content: "\00B7";
     margin-right: 9px;
-    color: #4a464c;
+    color: #555;
 }
 
 .changelog-row {
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 32px;
-    padding: 28px 0;
+    padding: 32px 0;
     border-top: 1px solid var(--border);
 }
 
@@ -220,13 +233,23 @@ h2.section-head {
 }
 
 .change-group .group-title {
-    font-size: 11px;
+    display: inline-block;
+    font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text);
-    margin-bottom: 2px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2px 10px;
+    margin-bottom: 8px;
 }
+
+.change-group.added .group-title { border-left: 2px solid #7fa87f; }
+.change-group.changed .group-title { border-left: 2px solid #d2a24c; }
+.change-group.removed .group-title { border-left: 2px solid #9a6b72; }
+.change-group.fixed .group-title { border-left: 2px solid #7d9bc0; }
 
 .change-group ul {
     list-style: none;
@@ -236,13 +259,13 @@ h2.section-head {
     font-size: 13px;
     font-weight: 300;
     color: var(--dim);
-    padding: 1px 0;
+    padding: 2px 0;
 }
 
 .change-group li::before {
     content: "\00B7";
     margin-right: 9px;
-    color: #4a464c;
+    color: #555;
 }
 
 .site-footer {
