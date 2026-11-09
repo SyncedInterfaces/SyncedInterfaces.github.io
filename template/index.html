@@ -5,14 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{NAME}}</title>
 <meta name="description" content="{{TAGLINE}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="page">
 <header class="site-header">
     <a class="brand" href="index.html">{{NAME}}</a>
     <nav class="nav">
-        <a href="features.html">Features</a>
-        <a href="changelog.html">Changelog</a>
+        <a href="#features">Features</a>
+        <a href="#changelog">Changelog</a>
         {{GITHUB_LINK}}
     </nav>
 </header>
@@ -20,18 +23,21 @@
     <section class="hero">
         <h1>{{NAME}}</h1>
         <p class="tagline">{{TAGLINE}}</p>
-        <p class="version">Current version <strong>v{{VERSION}}</strong></p>
         <div class="actions">
             {{SCRIPT_BUTTON}}
-            <a class="button" href="features.html">Feature list</a>
-            <a class="button" href="changelog.html">Changelog</a>
         </div>
+        <p class="version-line">v{{VERSION}}</p>
     </section>
-    <h2 class="section">What it does</h2>
-    <div class="feature-grid">
-{{HOME_CARDS}}
-    </div>
+    <section id="features">
+        <h2 class="section-head">Feature List</h2>
+{{FEATURE_COLUMNS}}
+    </section>
+    <section id="changelog">
+        <h2 class="section-head">Changelog</h2>
+{{CHANGELOG_ROWS}}
+    </section>
 </main>
 <footer class="site-footer">{{NAME}} v{{VERSION}}</footer>
+</div>
 </body>
 </html>
