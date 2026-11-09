@@ -280,16 +280,73 @@ h2.section-head {
 @media (max-width: 900px) {
     .feature-cols {
         column-count: 2;
+        column-gap: 36px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
     }
 }
 
 @media (max-width: 640px) {
+    body {
+        line-height: 1.65;
+    }
+
+    .site-header {
+        height: 56px;
+    }
+
+    .brand {
+        font-size: 14px;
+    }
+
+    .version-badge {
+        padding: 1px 6px;
+        font-size: 9px;
+    }
+
+    .nav {
+        gap: 16px;
+        font-size: 12px;
+    }
+
     .hero {
-        padding: 56px 0 48px;
+        padding: 48px 0 36px;
     }
 
     .hero h1 {
-        font-size: 32px;
+        font-size: clamp(28px, 9vw, 34px);
+        letter-spacing: -1px;
+    }
+
+    .hero .tagline {
+        font-size: 15px;
+        margin-top: 12px;
+    }
+
+    .hero .actions {
+        margin-top: 26px;
+        gap: 10px;
+    }
+
+    .button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+    }
+
+    .script-url {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    h2.section-head {
+        margin: 56px 0 24px;
+        font-size: 14px;
     }
 
     .feature-cols {
@@ -297,16 +354,27 @@ h2.section-head {
         column-rule: none;
     }
 
-    .changelog-row {
-        grid-template-columns: 1fr;
-        gap: 12px;
+    .feature-block {
+        margin: 0 0 32px;
+        padding-left: 15px;
     }
 
-    .nav {
-        gap: 16px;
+    .changelog-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 24px 0;
+    }
+
+    .changelog-row .date {
+        font-size: 15px;
     }
 
     .page {
         padding: 0 18px;
+    }
+
+    .site-footer {
+        margin-top: 56px;
+        padding: 24px 0;
     }
 }
