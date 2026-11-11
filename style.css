@@ -3,9 +3,48 @@
     padding: 0;
 }
 
+:root {
+    color-scheme: dark;
+    --bg: #161616;
+    --surface: #1f1f1f;
+    --border: #2e2e2e;
+    --text: #f2f2f2;
+    --text-soft: #c4c4c4;
+    --muted: #9a9a9a;
+    --dim: #555;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #f7f7f7;
+    --surface: #ececec;
+    --border: #d6d6d6;
+    --text: #161616;
+    --text-soft: #3a3a3a;
+    --muted: #666;
+    --dim: #aaa;
+}
+
+.theme-toggle {
+    margin-left: 28px;
+    padding: 4px 10px;
+    font: inherit;
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.theme-toggle:hover {
+    color: var(--text);
+}
+
 body {
-    background: #161616;
-    color: #f2f2f2;
+    background: var(--bg);
+    color: var(--text);
     font-family: "Poppins", "Century Gothic", sans-serif;
     line-height: 1.7;
 }
@@ -24,8 +63,8 @@ a {
 .site-header {
     position: sticky;
     top: 0;
-    background: #161616;
-    border-bottom: 1px solid #2e2e2e;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
 }
 
 .site-header .bar {
@@ -45,21 +84,21 @@ a {
     padding: 2px 8px;
     font-size: 10px;
     font-weight: 400;
-    color: #9a9a9a;
-    background: #1f1f1f;
-    border: 1px solid #2e2e2e;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 3px;
 }
 
 .nav a {
     margin-left: 28px;
     font-size: 13px;
-    color: #9a9a9a;
+    color: var(--muted);
     transition: color 0.15s;
 }
 
 .nav a:hover {
-    color: #f2f2f2;
+    color: var(--text);
 }
 
 .hero {
@@ -76,7 +115,7 @@ a {
     margin-top: 14px;
     font-size: 16px;
     font-weight: 300;
-    color: #9a9a9a;
+    color: var(--muted);
     max-width: 560px;
 }
 
@@ -90,14 +129,14 @@ a {
     padding: 12px 26px;
     font-size: 13px;
     font-weight: 600;
-    border: 1px solid #2e2e2e;
-    background: #1f1f1f;
-    color: #f2f2f2;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
     transition: border-color 0.15s, transform 0.15s;
 }
 
 .button:hover {
-    border-color: #9a9a9a;
+    border-color: var(--muted);
     transform: translateY(-1px);
 }
 
@@ -113,9 +152,9 @@ a {
     padding: 10px 14px;
     font-family: Consolas, monospace;
     font-size: 12px;
-    color: #9a9a9a;
-    background: #1f1f1f;
-    border: 1px solid #2e2e2e;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
 }
 
 .section-head {
@@ -186,7 +225,7 @@ a {
 .feature-block summary::before {
     content: "+";
     float: right;
-    color: #9a9a9a;
+    color: var(--muted);
     font-weight: 400;
 }
 
@@ -198,7 +237,7 @@ a {
     margin: 4px 0 8px 30px;
     font-size: 12px;
     font-weight: 500;
-    color: #9a9a9a;
+    color: var(--muted);
 }
 
 .feature-block ul {
@@ -209,14 +248,14 @@ a {
 .feature-block li {
     font-size: 13px;
     font-weight: 300;
-    color: #9a9a9a;
+    color: var(--muted);
     padding: 2px 0;
 }
 
 .feature-block li::before {
     content: "\00B7";
     margin-right: 9px;
-    color: #555;
+    color: var(--dim);
 }
 
 .changelog-row {
@@ -225,8 +264,8 @@ a {
     gap: 28px;
     margin-bottom: 16px;
     padding: 24px 26px;
-    background: #161616;
-    border: 1px solid #2e2e2e;
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 10px;
 }
 
@@ -246,8 +285,8 @@ a {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #f2f2f2;
-    background: #2e2e2e;
+    color: var(--text);
+    background: var(--border);
     border-radius: 4px;
 }
 
@@ -267,8 +306,8 @@ a {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    background: #161616;
-    border: 1px solid #2e2e2e;
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-left-width: 3px;
     border-radius: 4px;
 }
@@ -286,26 +325,26 @@ a {
     font-size: 14px;
     font-weight: 300;
     line-height: 1.55;
-    color: #c4c4c4;
+    color: var(--text-soft);
     padding: 4px 0;
 }
 
 .change-group li::before {
     content: "\00B7";
     margin-right: 9px;
-    color: #555;
+    color: var(--dim);
 }
 
 .site-footer {
     margin-top: 40px;
     padding: 24px 0;
-    border-top: 1px solid #2e2e2e;
+    border-top: 1px solid var(--border);
     font-size: 12px;
-    color: #9a9a9a;
+    color: var(--muted);
 }
 
 .site-footer a:hover {
-    color: #f2f2f2;
+    color: var(--text);
 }
 
 @media (max-width: 640px) {
