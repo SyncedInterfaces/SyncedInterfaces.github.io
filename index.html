@@ -21,7 +21,10 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
             <a href="#features">Features</a>
             <a href="#changelog">Changelog</a>
             <a href="https://github.com/SyncedInterfaces/SyncedInterfaces.github.io" target="_blank" rel="noopener">GitHub</a>
-            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+                <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+                <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13a9 9 0 0 1-9.9-9.9A9 9 0 1 0 20.9 13Z"/></svg>
+            </button>
         </nav>
     </div>
 </header>
@@ -512,7 +515,9 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
     var root = document.documentElement;
     var button = document.getElementById("theme-toggle");
     function label() {
-        button.textContent = root.dataset.theme === "light" ? "Dark" : "Light";
+        var action = root.dataset.theme === "light" ? "Switch to dark mode" : "Switch to light mode";
+        button.setAttribute("aria-label", action);
+        button.title = action;
     }
     label();
     button.addEventListener("click", function () {
