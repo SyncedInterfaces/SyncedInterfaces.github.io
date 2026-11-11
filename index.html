@@ -171,8 +171,14 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
     <section id="changelog">
         <h2 class="section-head">Changelog</h2>
         <div class="changelog-row">
-            <p class="date">November 11th - Website only<span class="latest-tag">Latest</span></p>
+            <p class="date">November 11th<span class="latest-tag">Latest</span></p>
             <div>
+                <div class="change-group other">
+                    <p class="group-title">Website only</p>
+                    <ul>
+                        <li>These changes apply to the website only. Nothing was changed to the script yet (new things coming soon).</li>
+                    </ul>
+                </div>
                 <div class="change-group added">
                     <p class="group-title">Added</p>
                     <ul>
@@ -184,7 +190,6 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                     <p class="group-title">Changed</p>
                     <ul>
                         <li>Cleaner website theme toggle with sun and moon icons, a subtle circular hover effect, and keyboard focus styling.</li>
-                        <li>These changes apply to the website only. Nothing was changed to the script yet (new things coming soon).</li>
                     </ul>
                 </div>
             </div>
