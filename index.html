@@ -176,15 +176,15 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 <div class="change-group added">
                     <p class="group-title">Added</p>
                     <ul>
-                        <li>Pixels tool in the draw pad. I can now Paste a ⬛⬜ grid and click Import grid, one alt per filled cell.</li>
-                        <li>-mosaic grid forms pasted grid rows as a wall of alts.</li>
+                        <li>Pixels in the draw pad. ⬛ or # is an alt, ⬜ or . is a gap.</li>
+                        <li>-mosaic grid stands alts on a pasted ⬛⬜ grid.</li>
                     </ul>
                 </div>
                 <div class="change-group changed">
                     <p class="group-title">Changed</p>
                     <ul>
-                        <li>Grids with too few alts drop interior pixels first so the outline stays intact.</li>
-                        <li>Imported grids are cropped and scaled to fit.</li>
+                        <li>Too few alts for a grid drops the middle pixels and keeps the edge.</li>
+                        <li>Imported grids cut off the empty border, then scale to the pad.</li>
                     </ul>
                 </div>
             </div>
