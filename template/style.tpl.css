@@ -255,7 +255,10 @@ a {
     display: grid;
     grid-template-columns: 170px 1fr;
     gap: 28px;
-    margin-bottom: 36px;
+    margin-bottom: 16px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    align-items: start;
 }
 
 .date {
@@ -263,7 +266,7 @@ a {
     font-weight: 600;
     color: var(--text);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
 }
 
@@ -353,5 +356,6 @@ a {
     .changelog-row {
         grid-template-columns: 1fr;
         gap: 8px;
+        padding: 14px;
     }
 }
