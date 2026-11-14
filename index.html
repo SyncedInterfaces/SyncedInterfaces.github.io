@@ -171,7 +171,29 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
     <section id="changelog">
         <h2 class="section-head">Changelog</h2>
         <div class="changelog-row">
-            <p class="date">November 13th<span class="latest-tag">Latest</span></p>
+            <p class="date">November 14th<span class="latest-tag">Latest</span></p>
+            <div>
+                <div class="change-group changed">
+                    <p class="group-title">Changed</p>
+                    <ul>
+                        <li>Draw pad shapes are beside the board, and the footer is shorter.</li>
+                        <li>Cross is two bars instead of the outline.</li>
+                        <li>Pixel grids now uses however many alts are online. The count no longer treats every filled cell as required.</li>
+                        <li>Who's Speaking no longer has the live badge or a box around each person.</li>
+                        <li>Voice bubbles now show the name and the bars.</li>
+                        <li>Game hotbar buttons show on my hotbar. Their hotbar is moved off screen.</li>
+                    </ul>
+                </div>
+                <div class="change-group fixed">
+                    <p class="group-title">Fixed</p>
+                    <ul>
+                        <li>1–0 was equipping a tool and putting it straight back on games that already use those keys.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="changelog-row">
+            <p class="date">November 13th</p>
             <div>
                 <div class="change-group added">
                     <p class="group-title">Added</p>
