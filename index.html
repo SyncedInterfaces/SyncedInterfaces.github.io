@@ -169,7 +169,26 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
     <section id="changelog">
         <h2 class="section-head">Changelog</h2>
         <div class="changelog-row">
-            <p class="date">November 14th<span class="latest-tag">Latest</span></p>
+            <p class="date">November 14th, continued<span class="latest-tag">Latest</span></p>
+            <div>
+                <div class="change-group removed">
+                    <p class="group-title">Removed</p>
+                    <ul>
+                        <li>Phone is now removed entirely and replaced with a Spotify overlay UI.</li>
+                    </ul>
+                </div>
+                <div class="change-group changed">
+                    <p class="group-title">Changed</p>
+                    <ul>
+                        <li>Spotify opens from the music icon on the topbar.</li>
+                        <li>Volume follows Spotify instead of sitting on 80.</li>
+                        <li>Clearing the search and pressing enter drops the results.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="changelog-row">
+            <p class="date">November 14th</p>
             <div>
                 <div class="change-group changed">
                     <p class="group-title">Changed</p>
