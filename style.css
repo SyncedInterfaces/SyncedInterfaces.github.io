@@ -268,9 +268,9 @@ a {
 }
 
 .latest-tag {
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-soft);
 }
 
 .change-group {
