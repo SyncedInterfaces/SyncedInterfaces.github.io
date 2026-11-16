@@ -6,7 +6,7 @@
 <title>Synced Interfaces</title>
 <meta name="description" content="The script behind everything in my alts.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="style.css?v=1.1154">
+<link rel="stylesheet" href="style.css?v=1.1155">
 <script>
 document.documentElement.dataset.theme = localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
 </script>
@@ -14,7 +14,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
 <body>
 <header class="site-header">
     <div class="bar page">
-        <a class="brand" href="/">Synced Interfaces <span class="version-badge">v1.1154</span></a>
+        <a class="brand" href="/">Synced Interfaces <span class="version-badge">v1.1155</span></a>
         <nav class="nav">
             <a href="#features">Features</a>
             <a href="#changelog">Changelog</a>
@@ -119,7 +119,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 <summary>Games</summary>
                 <ul>
                     <li>Shadow Boxing Battles (SBB): alt auto win farming, ring teleport and refresh, ring color tinting with restore, auto move solver, opponent perspective, hit spoofer, hide testing sign, sleek menu</li>
-                    <li>Prison Life: phase fix, vest pickup, meal eat, drop collector, empty mag, charge outline, height clamp, taser skip, car shot pass, fence touch, held gun offset, firearm tweaks</li>
+                    <li>Prison Life: phase fix, vest pickup, meal eat, drop collector, empty mag, charge outline, height clamp, taser skip, car shot pass, fence touch, held gun offset, firearm tweaks, auto arrest, no jump cooldown, anti fling, bullet tracers</li>
                     <li>Punch to Escape lobby shop, class, bags, and solo start</li>
                     <li>Punch to Escape prison auto punch, collect, sell, belts, machines, revive, escape, and cell search</li>
                 </ul>
@@ -169,7 +169,27 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
     <section id="changelog">
         <h2 class="section-head">Changelog</h2>
         <div class="changelog-row">
-            <p class="date">November 14th, continued<span class="latest-tag">Latest</span></p>
+            <p class="date">November 16th<span class="latest-tag">Latest</span></p>
+            <div>
+                <div class="change-group added">
+                    <p class="group-title">Added</p>
+                    <ul>
+                        <li>Prison Life auto arrest. Cuffs the closest arrestable player, with range, cooldown, team filters and a handcuffs check.</li>
+                        <li>Prison Life anti fling. Vehicle bodies stop colliding and touching so cars cannot launch you, wheels keep working, plain seats get an enter prompt.</li>
+                        <li>Prison Life no jump cooldown. Jumping no longer feeds the stamina drain.</li>
+                        <li>Prison Life bullet tracers. Neon parts or screen lines showing where my shots actually went.</li>
+                    </ul>
+                </div>
+                <div class="change-group changed">
+                    <p class="group-title">Changed</p>
+                    <ul>
+                        <li>Prison Life controls split across Enforcement and Vehicle boxes on the Experiences tab.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="changelog-row">
+            <p class="date">November 14th, continued</p>
             <div>
                 <div class="change-group removed">
                     <p class="group-title">Removed</p>
@@ -590,7 +610,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
         </div>
     </section>
 </main>
-<footer class="site-footer">Synced Interfaces v1.1154 &middot; <a href="https://discord.gg/syncedd" target="_blank" rel="noopener">Discord</a></footer>
+<footer class="site-footer">Synced Interfaces v1.1155 &middot; <a href="https://discord.gg/syncedd" target="_blank" rel="noopener">Discord</a></footer>
 </div>
 <script>
 (function () {
