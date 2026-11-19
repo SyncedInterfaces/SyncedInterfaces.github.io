@@ -6,7 +6,7 @@
 <title>Synced Interfaces</title>
 <meta name="description" content="The script behind everything in my alts.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="style.css?v=1.1170">
+<link rel="stylesheet" href="style.css?v=1.1173">
 <script>
 document.documentElement.dataset.theme = localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
 </script>
@@ -14,7 +14,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
 <body>
 <header class="site-header">
     <div class="bar page">
-        <a class="brand" href="/">Synced Interfaces <span class="version-badge">v1.1170</span></a>
+        <a class="brand" href="/">Synced Interfaces <span class="version-badge">v1.1173</span></a>
         <nav class="nav">
             <a href="#features">Features</a>
             <a href="#changelog">Changelog</a>
@@ -121,8 +121,6 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                     <li>Shadow Boxing Battles (SBB): alt auto win farming, ring teleport and refresh, ring color tinting with restore, auto move solver, opponent perspective, hit spoofer, hide testing sign, sleek menu</li>
                     <li>Prison Life: phase fix, vest pickup, meal eat, drop collector, empty mag, charge outline, height clamp, taser skip, car shot pass, fence touch, held gun offset, firearm tweaks, auto arrest, no jump cooldown, anti fling, bullet tracers</li>
                     <li>Vault: cash ESP, no hold prompts, monster awareness, rare-bill auto collect, full bag stop, auto deposit and sell with return, gold run, night gun, shredder repair, daily and free gift, upgrades, belts and tubes</li>
-                    <li>Punch to Escape lobby shop, class, bags, and solo start</li>
-                    <li>Punch to Escape prison auto punch, collect, sell, belts, machines, revive, escape, and cell search</li>
                 </ul>
             </details>
             <details class="feature-block">
@@ -170,7 +168,38 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
     <section id="changelog">
         <h2 class="section-head">Changelog</h2>
         <div class="changelog-row">
-            <p class="date">November 16th<span class="latest-tag">Latest</span></p>
+            <p class="date">November 19th<span class="latest-tag">Latest</span></p>
+            <div>
+                <div class="change-group added">
+                    <p class="group-title">Added</p>
+                    <ul>
+                        <li>Vault: cash ESP, no hold prompts, monster awareness, tool-based auto collect with a full bag stop, auto deposit and sell with return, gold run, night gun, shredder repair, daily and free gift claims, and auto upgrade with belts and tubes.</li>
+                    </ul>
+                </div>
+                <div class="change-group changed">
+                    <p class="group-title">Changed</p>
+                    <ul>
+                        <li>Custom chat bubbles use each sender's own name colour, the tail is tinted to match, and the bubbles get tighter padding and larger text.</li>
+                    </ul>
+                </div>
+                <div class="change-group removed">
+                    <p class="group-title">Removed</p>
+                    <ul>
+                        <li>Punch to Escape lobby and prison features.</li>
+                    </ul>
+                </div>
+                <div class="change-group fixed">
+                    <p class="group-title">Fixed</p>
+                    <ul>
+                        <li>Custom chat bubbles no longer repeat the sender's name over and over.</li>
+                        <li>Custom inventory no longer lists the game's hidden or locked hotbar slots, which were filling it with duplicate placeholder rows.</li>
+                        <li>Speed no longer loops with a re-entrancy error on games that overwrite walk speed, like slap effects.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="changelog-row">
+            <p class="date">November 16th</p>
             <div>
                 <div class="change-group added">
                     <p class="group-title">Added</p>
@@ -611,7 +640,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
         </div>
     </section>
 </main>
-<footer class="site-footer">Synced Interfaces v1.1170 &middot; <a href="https://discord.gg/syncedd" target="_blank" rel="noopener">Discord</a></footer>
+<footer class="site-footer">Synced Interfaces v1.1173 &middot; <a href="https://discord.gg/syncedd" target="_blank" rel="noopener">Discord</a></footer>
 </div>
 <script>
 (function () {
