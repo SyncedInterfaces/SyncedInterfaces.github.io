@@ -6,7 +6,7 @@
 <title>Synced Interfaces</title>
 <meta name="description" content="The script behind everything in my alts.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="style.css?v=1.1179">
+<link rel="stylesheet" href="style.css?v=1.1182">
 <script>
 document.documentElement.dataset.theme = localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
 </script>
@@ -14,7 +14,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
 <body>
 <header class="site-header">
     <div class="bar page">
-        <a class="brand" href="/">Synced Interfaces <span class="version-badge">v1.1179</span></a>
+        <a class="brand" href="/">Synced Interfaces <span class="version-badge">v1.1182</span></a>
         <nav class="nav">
             <a href="#features">Features</a>
             <a href="#changelog">Changelog</a>
@@ -205,6 +205,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                     <ul>
                         <li>Custom chat bubbles use each sender's own name colour, the tail is tinted to match, and the bubbles get tighter padding and larger text.</li>
                         <li>Vault cash and monster nametags are rounded auto-sized cards with the name on top and distance below, special bills get rarity colours, and monsters show a health bar with current and max HP.</li>
+                        <li>Chat and Emotes mirror the main interface background image and fade across the whole hub window, header and tabs included, updating live when the background changes.</li>
                     </ul>
                 </div>
                 <div class="change-group removed">
@@ -666,7 +667,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
         </div>
     </section>
 </main>
-<footer class="site-footer">Synced Interfaces v1.1179 &middot; <a href="https://discord.gg/syncedd" target="_blank" rel="noopener">Discord</a></footer>
+<footer class="site-footer">Synced Interfaces v1.1182 &middot; <a href="https://discord.gg/syncedd" target="_blank" rel="noopener">Discord</a></footer>
 </div>
 <script>
 (function () {
