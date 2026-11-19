@@ -41,7 +41,10 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
     </section>
     <section id="changelog">
         <h2 class="section-head">Changelog</h2>
+{{CHANGELOG_PAGER}}
+        <div class="changelog-pages">
 {{CHANGELOG_ROWS}}
+        </div>
     </section>
 </main>
 <footer class="site-footer">{{NAME}} v{{VERSION}}{{DISCORD_FOOTER}}</footer>
@@ -61,6 +64,40 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
         localStorage.setItem("theme", root.dataset.theme);
         label();
     });
+})();
+(function () {
+    var pages = document.querySelectorAll(".changelog-page");
+    var select = document.getElementById("changelog-select");
+    var prev = document.getElementById("changelog-prev");
+    var next = document.getElementById("changelog-next");
+    var count = document.getElementById("changelog-count");
+    if (!select || !prev || !next || pages.length < 2) {
+        return;
+    }
+    var total = pages.length;
+    var index = 0;
+    function show(target) {
+        index = Math.max(0, Math.min(total - 1, target));
+        for (var i = 0; i < total; i++) {
+            pages[i].classList.toggle("is-active", i === index);
+        }
+        select.value = String(index);
+        prev.disabled = index === 0;
+        next.disabled = index === total - 1;
+        if (count) {
+            count.textContent = (index + 1) + " / " + total;
+        }
+    }
+    prev.addEventListener("click", function () {
+        show(index - 1);
+    });
+    next.addEventListener("click", function () {
+        show(index + 1);
+    });
+    select.addEventListener("change", function () {
+        show(parseInt(select.value, 10) || 0);
+    });
+    show(0);
 })();
 </script>
 </body>

@@ -251,14 +251,78 @@ a {
     color: var(--dim);
 }
 
-.changelog-row {
-    display: grid;
+.changelog-pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.pager-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    font-family: inherit;
+    font-size: 17px;
+    line-height: 1;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.pager-btn:hover:not(:disabled) {
+    color: var(--text);
+    border-color: var(--muted);
+}
+
+.pager-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.pager-btn:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
+.pager-select {
+    min-width: 220px;
+    padding: 8px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    cursor: pointer;
+}
+
+.pager-select:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
+.pager-count {
+    margin-left: 6px;
+    font-size: 13px;
+    color: var(--dim);
+}
+
+.changelog-page {
+    display: none;
     grid-template-columns: 170px 1fr;
     gap: 28px;
-    margin-bottom: 16px;
     padding: 16px 18px;
     border: 1px solid var(--border);
     align-items: start;
+}
+
+.changelog-page.is-active {
+    display: grid;
 }
 
 .date {
@@ -353,7 +417,17 @@ a {
         column-count: 1;
     }
 
-    .changelog-row {
+    .changelog-pager {
+        flex-wrap: wrap;
+    }
+
+    .pager-select {
+        min-width: 0;
+        flex: 1 1 auto;
+        order: -1;
+    }
+
+    .changelog-page {
         grid-template-columns: 1fr;
         gap: 8px;
         padding: 14px;

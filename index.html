@@ -167,7 +167,31 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
     </section>
     <section id="changelog">
         <h2 class="section-head">Changelog</h2>
-        <div class="changelog-row">
+        <div class="changelog-pager">
+            <button class="pager-btn" id="changelog-prev" type="button" aria-label="Previous update">&#8249;</button>
+            <select class="pager-select" id="changelog-select" aria-label="Jump to update">
+                <option value="0">November 19th</option>
+                <option value="1">November 16th</option>
+                <option value="2">November 14th, continued</option>
+                <option value="3">November 14th</option>
+                <option value="4">November 13th</option>
+                <option value="5">November 11th</option>
+                <option value="6">November 9th</option>
+                <option value="7">November 8th</option>
+                <option value="8">November 7th, continued</option>
+                <option value="9">November 7th</option>
+                <option value="10">November 4th</option>
+                <option value="11">November 3rd</option>
+                <option value="12">November 2nd</option>
+                <option value="13">November 1st</option>
+                <option value="14">October 31st</option>
+                <option value="15">October 30th</option>
+            </select>
+            <button class="pager-btn" id="changelog-next" type="button" aria-label="Next update">&#8250;</button>
+            <span class="pager-count" id="changelog-count"></span>
+        </div>
+        <div class="changelog-pages">
+        <div class="changelog-page is-active">
             <p class="date">November 19th<span class="latest-tag">Latest</span></p>
             <div>
                 <div class="change-group added">
@@ -198,7 +222,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 16th</p>
             <div>
                 <div class="change-group added">
@@ -218,7 +242,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 14th, continued</p>
             <div>
                 <div class="change-group removed">
@@ -237,7 +261,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 14th</p>
             <div>
                 <div class="change-group changed">
@@ -259,7 +283,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 13th</p>
             <div>
                 <div class="change-group added">
@@ -278,7 +302,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 11th</p>
             <div>
                 <div class="change-group other">
@@ -302,7 +326,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 9th</p>
             <div>
                 <div class="change-group added">
@@ -331,7 +355,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 8th</p>
             <div>
                 <div class="change-group added">
@@ -362,7 +386,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 7th, continued</p>
             <div>
                 <div class="change-group added">
@@ -388,7 +412,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 7th</p>
             <div>
                 <div class="change-group added">
@@ -435,7 +459,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 4th</p>
             <div>
                 <div class="change-group added">
@@ -482,7 +506,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 3rd</p>
             <div>
                 <div class="change-group added">
@@ -527,7 +551,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 2nd</p>
             <div>
                 <div class="change-group added">
@@ -562,7 +586,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">November 1st</p>
             <div>
                 <div class="change-group added">
@@ -594,7 +618,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">October 31st</p>
             <div>
                 <div class="change-group added">
@@ -620,7 +644,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                 </div>
             </div>
         </div>
-        <div class="changelog-row">
+        <div class="changelog-page">
             <p class="date">October 30th</p>
             <div>
                 <div class="change-group added">
@@ -637,6 +661,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
                     </ul>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 </main>
@@ -657,6 +682,40 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
         localStorage.setItem("theme", root.dataset.theme);
         label();
     });
+})();
+(function () {
+    var pages = document.querySelectorAll(".changelog-page");
+    var select = document.getElementById("changelog-select");
+    var prev = document.getElementById("changelog-prev");
+    var next = document.getElementById("changelog-next");
+    var count = document.getElementById("changelog-count");
+    if (!select || !prev || !next || pages.length < 2) {
+        return;
+    }
+    var total = pages.length;
+    var index = 0;
+    function show(target) {
+        index = Math.max(0, Math.min(total - 1, target));
+        for (var i = 0; i < total; i++) {
+            pages[i].classList.toggle("is-active", i === index);
+        }
+        select.value = String(index);
+        prev.disabled = index === 0;
+        next.disabled = index === total - 1;
+        if (count) {
+            count.textContent = (index + 1) + " / " + total;
+        }
+    }
+    prev.addEventListener("click", function () {
+        show(index - 1);
+    });
+    next.addEventListener("click", function () {
+        show(index + 1);
+    });
+    select.addEventListener("change", function () {
+        show(parseInt(select.value, 10) || 0);
+    });
+    show(0);
 })();
 </script>
 </body>
