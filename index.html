@@ -171,29 +171,62 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
         <div class="changelog-pager">
             <button class="pager-btn" id="changelog-prev" type="button" aria-label="Previous update">&#8249;</button>
             <select class="pager-select" id="changelog-select" aria-label="Jump to update">
-                <option value="0">November 19th</option>
-                <option value="1">November 16th</option>
-                <option value="2">November 14th, continued</option>
-                <option value="3">November 14th</option>
-                <option value="4">November 13th</option>
-                <option value="5">November 11th</option>
-                <option value="6">November 9th</option>
-                <option value="7">November 8th</option>
-                <option value="8">November 7th, continued</option>
-                <option value="9">November 7th</option>
-                <option value="10">November 4th</option>
-                <option value="11">November 3rd</option>
-                <option value="12">November 2nd</option>
-                <option value="13">November 1st</option>
-                <option value="14">October 31st</option>
-                <option value="15">October 30th</option>
+                <option value="0">November 21st</option>
+                <option value="1">November 19th</option>
+                <option value="2">November 16th</option>
+                <option value="3">November 14th, continued</option>
+                <option value="4">November 14th</option>
+                <option value="5">November 13th</option>
+                <option value="6">November 11th</option>
+                <option value="7">November 9th</option>
+                <option value="8">November 8th</option>
+                <option value="9">November 7th, continued</option>
+                <option value="10">November 7th</option>
+                <option value="11">November 4th</option>
+                <option value="12">November 3rd</option>
+                <option value="13">November 2nd</option>
+                <option value="14">November 1st</option>
+                <option value="15">October 31st</option>
+                <option value="16">October 30th</option>
             </select>
             <button class="pager-btn" id="changelog-next" type="button" aria-label="Next update">&#8250;</button>
             <span class="pager-count" id="changelog-count"></span>
         </div>
         <div class="changelog-pages">
         <div class="changelog-page is-active">
-            <p class="date">November 19th<span class="latest-tag">Latest</span></p>
+            <p class="date">November 21st<span class="latest-tag">Latest</span></p>
+            <div>
+                <div class="change-group added">
+                    <p class="group-title">Added</p>
+                    <ul>
+                        <li>Unscrew Every Screw Chapter 1 on the Experiences tab: auto pull with overlap pace, screw chase, and Pull With hand, driver, or smart.</li>
+                        <li>Auto sell at a chosen bag fill, with teleport to the sell machine and optional return after a successful sell.</li>
+                        <li>Stage screws-left label and nearest seated screw marker.</li>
+                        <li>Tools box: auto equip hand, driver, rocket, magnet, or lightning, and auto buy driver, drone, rocket, or magnet.</li>
+                        <li>Upgrade picker to buy checked hand, driver, drone, rocket, magnet, bag, and walk levels when affordable.</li>
+                    </ul>
+                </div>
+                <div class="change-group changed">
+                    <p class="group-title">Changed</p>
+                    <ul>
+                        <li>Voice chat settings use a card layout with back header, live value pill, and range labels tied to the slider ends.</li>
+                        <li>Voice chat slider and percent box scale up on mobile and accept touch drags.</li>
+                    </ul>
+                </div>
+                <div class="change-group fixed">
+                    <p class="group-title">Fixed</p>
+                    <ul>
+                        <li>Unscrew pull gap slider now steps in milliseconds instead of a dead fractional range.</li>
+                        <li>Unscrew auto pull no longer spammed the same screw id while the server was still accepting it.</li>
+                        <li>Unscrew overlap pace no longer crashed from calling the global Stats service instead of room sync data.</li>
+                        <li>Unscrew teleport sell lines up with the sell machine Body, refreshes bag state before selling, and only returns after coins or bag count actually change.</li>
+                        <li>Voice chat UI size slider no longer errors with attempt to call a nil value when dragging.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="changelog-page">
+            <p class="date">November 19th</p>
             <div>
                 <div class="change-group added">
                     <p class="group-title">Added</p>
