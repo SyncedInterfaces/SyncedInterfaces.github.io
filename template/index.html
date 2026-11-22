@@ -14,11 +14,11 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
 <body>
 <header class="site-header">
     <div class="bar page">
-        <a class="brand" href="/">{{NAME}} <span class="version-badge">v{{VERSION}}</span></a>
+        <a class="brand" href="/">{{NAME}}</a>
         <nav class="nav">
-            <a href="#features">Features</a>
-            <a href="#changelog">Changelog</a>
+            <a href="#scripts">Scripts</a>
             {{GITHUB_LINK}}
+            <a href="{{DISCORD}}" target="_blank" rel="noopener">Discord</a>
             <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
                 <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
                 <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13a9 9 0 0 1-9.9-9.9A9 9 0 1 0 20.9 13Z"/></svg>
@@ -29,25 +29,21 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
 <div class="page">
 <main>
     <section class="hero">
-        <h1>{{NAME}}</h1>
+        <h1>Free Scripts</h1>
         <p class="tagline">{{TAGLINE}}</p>
         <div class="actions">
-            {{SCRIPT_BUTTON}}
+            <a class="button primary" href="#scripts">Scripts</a>
+            <a class="button" href="{{REPO}}" target="_blank" rel="noopener">GitHub</a>
         </div>
     </section>
-    <section id="features">
-        <h2 class="section-head">Feature List</h2>
-{{FEATURE_COLUMNS}}
-    </section>
-    <section id="changelog">
-        <h2 class="section-head">Changelog</h2>
-{{CHANGELOG_PAGER}}
-        <div class="changelog-pages">
-{{CHANGELOG_ROWS}}
+    <section id="scripts">
+        <h2 class="section-head">Scripts</h2>
+        <div class="script-list" id="script-list">
+            <p class="script-status">Loading scripts…</p>
         </div>
     </section>
 </main>
-<footer class="site-footer">{{NAME}} v{{VERSION}}{{DISCORD_FOOTER}}</footer>
+<footer class="site-footer">{{NAME}}{{DISCORD_FOOTER}}</footer>
 </div>
 <script>
 (function () {
@@ -66,38 +62,92 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
     });
 })();
 (function () {
-    var pages = document.querySelectorAll(".changelog-page");
-    var select = document.getElementById("changelog-select");
-    var prev = document.getElementById("changelog-prev");
-    var next = document.getElementById("changelog-next");
-    var count = document.getElementById("changelog-count");
-    if (!select || !prev || !next || pages.length < 2) {
-        return;
+    var REPO = "SyncedInterfaces/Free-Scripts";
+    var RAW = "https://raw.githubusercontent.com/" + REPO + "/refs/heads/main/";
+    var list = document.getElementById("script-list");
+
+    function titleFrom(name) {
+        return name.replace(/\.lua$/i, "").replace(/([a-z])([A-Z])/g, "$1 $2").replace(/[_-]+/g, " ");
     }
-    var total = pages.length;
-    var index = 0;
-    function show(target) {
-        index = Math.max(0, Math.min(total - 1, target));
-        for (var i = 0; i < total; i++) {
-            pages[i].classList.toggle("is-active", i === index);
-        }
-        select.value = String(index);
-        prev.disabled = index === 0;
-        next.disabled = index === total - 1;
-        if (count) {
-            count.textContent = (index + 1) + " / " + total;
-        }
+
+    function loadstringFor(name) {
+        return 'loadstring(game:HttpGet("' + RAW + name + '"))()';
     }
-    prev.addEventListener("click", function () {
-        show(index - 1);
-    });
-    next.addEventListener("click", function () {
-        show(index + 1);
-    });
-    select.addEventListener("change", function () {
-        show(parseInt(select.value, 10) || 0);
-    });
-    show(0);
+
+    function card(file) {
+        var article = document.createElement("article");
+        article.className = "script-card";
+        var head = document.createElement("div");
+        head.className = "script-head";
+        var title = document.createElement("h3");
+        title.textContent = titleFrom(file.name);
+        var fileName = document.createElement("p");
+        fileName.className = "script-file";
+        fileName.textContent = file.name;
+        head.appendChild(title);
+        head.appendChild(fileName);
+        var code = document.createElement("code");
+        code.className = "script-load";
+        code.textContent = loadstringFor(file.name);
+        var actions = document.createElement("div");
+        actions.className = "script-actions";
+        var copy = document.createElement("button");
+        copy.className = "button primary";
+        copy.type = "button";
+        copy.textContent = "Copy loadstring";
+        copy.addEventListener("click", function () {
+            var text = code.textContent;
+            var done = function () {
+                copy.textContent = "Copied";
+                setTimeout(function () { copy.textContent = "Copy loadstring"; }, 1400);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done, function () {});
+            }
+        });
+        var source = document.createElement("a");
+        source.className = "button";
+        source.href = file.html_url;
+        source.target = "_blank";
+        source.rel = "noopener";
+        source.textContent = "Source";
+        actions.appendChild(copy);
+        actions.appendChild(source);
+        article.appendChild(head);
+        article.appendChild(code);
+        article.appendChild(actions);
+        return article;
+    }
+
+    function show(files) {
+        list.textContent = "";
+        if (!files.length) {
+            var empty = document.createElement("p");
+            empty.className = "script-status";
+            empty.textContent = "No scripts are released yet.";
+            list.appendChild(empty);
+            return;
+        }
+        files.sort(function (a, b) { return a.name.localeCompare(b.name); });
+        files.forEach(function (file) { list.appendChild(card(file)); });
+    }
+
+    fetch("https://api.github.com/repos/" + REPO + "/contents/")
+        .then(function (response) {
+            if (!response.ok) throw new Error("github");
+            return response.json();
+        })
+        .then(function (entries) {
+            show(entries.filter(function (entry) {
+                return entry.type === "file" && /\.lua$/i.test(entry.name);
+            }));
+        })
+        .catch(function () {
+            show([
+                { name: "Gambling.lua", html_url: "https://github.com/" + REPO + "/blob/main/Gambling.lua" },
+                { name: "VoiceBypass.lua", html_url: "https://github.com/" + REPO + "/blob/main/VoiceBypass.lua" }
+            ]);
+        });
 })();
 </script>
 </body>
