@@ -128,7 +128,7 @@ a {
 }
 
 .hero {
-    padding: 88px 0 72px;
+    padding: 64px 0 8px;
 }
 
 .hero h1 {
@@ -187,7 +187,7 @@ section {
 }
 
 .section-head {
-    margin: 88px 0 32px;
+    margin: 28px 0 20px;
     font-size: 15px;
     font-weight: 600;
 }
@@ -266,7 +266,7 @@ section {
     }
 
     .hero {
-        padding: 48px 0 40px;
+        padding: 40px 0 8px;
     }
 
     .hero h1 {
@@ -280,7 +280,7 @@ section {
     }
 
     .section-head {
-        margin: 56px 0 24px;
+        margin: 24px 0 16px;
     }
 
     .script-load {
