@@ -17,7 +17,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
         <a class="brand" href="/">Synced Interfaces</a>
         <nav class="nav">
             <a href="#scripts">Scripts</a>
-            <a href="https://github.com/SyncedInterfaces/Free-Scripts" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://gitlab.com/SyncedInterfaces/Free-Scripts/-/tree/main" target="_blank" rel="noopener">GitLab</a>
             <a href="https://discord.gg/syncedd" target="_blank" rel="noopener">Discord</a>
             <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
                 <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
@@ -33,7 +33,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
         <p class="tagline">Scripts and small projects I'm fine sharing. Open source, free to use.</p>
         <div class="actions">
             <a class="button primary" href="#scripts">Scripts</a>
-            <a class="button" href="https://github.com/SyncedInterfaces/Free-Scripts" target="_blank" rel="noopener">GitHub</a>
+            <a class="button" href="https://gitlab.com/SyncedInterfaces/Free-Scripts/-/tree/main" target="_blank" rel="noopener">GitLab</a>
         </div>
     </section>
     <section id="scripts">
@@ -63,7 +63,9 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
 })();
 (function () {
     var REPO = "SyncedInterfaces/Free-Scripts";
-    var RAW = "https://raw.githubusercontent.com/" + REPO + "/refs/heads/main/";
+    var PROJECT = encodeURIComponent(REPO);
+    var RAW = "https://gitlab.com/" + REPO + "/-/raw/main/";
+    var SOURCE = "https://gitlab.com/" + REPO + "/-/blob/main/";
     var list = document.getElementById("script-list");
 
     function titleFrom(name) {
@@ -71,7 +73,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
     }
 
     function loadstringFor(name) {
-        return 'loadstring(game:HttpGet("' + RAW + name + '"))()';
+        return 'loadstring(game:HttpGet("' + RAW + encodeURIComponent(name) + '"))()';
     }
 
     function card(file) {
@@ -107,7 +109,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
         });
         var source = document.createElement("a");
         source.className = "button";
-        source.href = file.html_url;
+        source.href = SOURCE + encodeURIComponent(file.name);
         source.target = "_blank";
         source.rel = "noopener";
         source.textContent = "Source";
@@ -132,20 +134,20 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
         files.forEach(function (file) { list.appendChild(card(file)); });
     }
 
-    fetch("https://api.github.com/repos/" + REPO + "/contents/")
+    fetch("https://gitlab.com/api/v4/projects/" + PROJECT + "/repository/tree?ref=main&per_page=100")
         .then(function (response) {
-            if (!response.ok) throw new Error("github");
+            if (!response.ok) throw new Error("gitlab");
             return response.json();
         })
         .then(function (entries) {
             show(entries.filter(function (entry) {
-                return entry.type === "file" && /\.lua$/i.test(entry.name);
+                return entry.type === "blob" && /\.lua$/i.test(entry.name);
             }));
         })
         .catch(function () {
             show([
-                { name: "Gambling.lua", html_url: "https://github.com/" + REPO + "/blob/main/Gambling.lua" },
-                { name: "VoiceBypass.lua", html_url: "https://github.com/" + REPO + "/blob/main/VoiceBypass.lua" }
+                { name: "Gambling.lua" },
+                { name: "VoiceChatBypass.lua" }
             ]);
         });
 })();
