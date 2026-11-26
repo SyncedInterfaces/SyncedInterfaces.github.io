@@ -14,7 +14,7 @@ document.documentElement.dataset.theme = localStorage.getItem("theme") || (match
 <body>
 <header class="site-header">
     <div class="bar page">
-        <a class="brand" href="/">{{NAME}}</a>
+        <a class="brand" href="/">{{NAME}}<span class="version-badge">v{{VERSION}}</span></a>
         <nav class="nav">
             <a href="#scripts">Scripts</a>
             {{REPO_LINK}}
